@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
 
-const SelectBreed = () => {
+const SelectBreed = ({onBreedChange}) => {
   const [breeds, setBreeds] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,12 @@ const SelectBreed = () => {
     <div className="comp-wrapper">
     <label htmlFor="breeds">Selecione uma raça:</label>
 
-    <select name="breeds" id="breeds" defaultValue="--">
+    <select 
+      name="breeds" 
+      id="breeds" 
+      defaultValue="--" 
+      onChange={onBreedChange}
+    >
       <option value="--" disabled>--</option>
       { renderOptions() }
     </select>

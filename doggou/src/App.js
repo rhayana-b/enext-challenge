@@ -9,7 +9,8 @@ import DogInfo from './components/DogInfo';
 const App = () => {
   const [petName, setPetName] = useState('');
   const [fontColor, setFontColor] = useState('#000000');
-  const [fontFamily, setFontFamily] = useState('')
+  const [fontFamily, setFontFamily] = useState('');
+  const [breed, setBreed] = useState('');
 
   return (
     <div className="App">
@@ -22,11 +23,11 @@ const App = () => {
       </div>
 
       <div className="main">
-        <SelectBreed/>
+        <SelectBreed onBreedChange={(event) => setBreed(event.target.value)} />
         <NameInput onNameChange={(event) => setPetName(event.target.value)} />
         <SelectColor color={fontColor} onColorChange={(event) => setFontColor(event.target.value)} />
         <SelectFont onFontChange={(event) => setFontFamily(event.target.value)} />
-        <DogInfo petName={petName} fontColor={fontColor} fontFamily={fontFamily} />
+        <DogInfo breed={breed} petName={petName} fontColor={fontColor} fontFamily={fontFamily} />
       </div>
     </div>
   );
