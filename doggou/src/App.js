@@ -11,6 +11,15 @@ const App = () => {
   const [fontColor, setFontColor] = useState('#000000');
   const [fontFamily, setFontFamily] = useState('');
   const [breed, setBreed] = useState('');
+  const [image, setImage] = useState('');
+
+  const savePet =  (breed, petName, color, font, image) => {
+    localStorage.setItem('breed', breed);
+    localStorage.setItem('petName', petName);
+    localStorage.setItem('color', color);
+    localStorage.setItem('font', font);
+    localStorage.setItem('image', image);
+  };
 
   return (
     <div className="App">
@@ -27,7 +36,8 @@ const App = () => {
         <NameInput onNameChange={(event) => setPetName(event.target.value)} />
         <SelectColor color={fontColor} onColorChange={(event) => setFontColor(event.target.value)} />
         <SelectFont onFontChange={(event) => setFontFamily(event.target.value)} />
-        <DogInfo breed={breed} petName={petName} fontColor={fontColor} fontFamily={fontFamily} />
+        <DogInfo breed={breed} petName={petName} fontColor={fontColor} fontFamily={fontFamily} onImageChange={setImage}/>
+        <button onClick={() => {savePet(breed, petName, fontColor, fontFamily, image)}}>Salvar</button>
       </div>
     </div>
   );

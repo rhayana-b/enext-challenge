@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 
-const DogInfo = ({breed, petName, fontColor, fontFamily}) => {
+const DogInfo = ({breed, petName, fontColor, fontFamily, onImageChange}) => {
   const [image, setImage] = useState('');
 
   useEffect(() => {
     if (breed) {
       api.get(`/breed/${breed}/images/random`).then(response => {
         setImage(response.data.message);
+        onImageChange(response.data.message);
       }).catch(error => {
         console.log(error);
       }); 
