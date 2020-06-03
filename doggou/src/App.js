@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import api from './services/api';
 import SelectBreed from './components/SelectBreed';
-import BreedInput from './components/BreedInput';
+import NameInput from './components/NameInput';
 import SelectColor from './components/SelectColor';
 import SelectFont from './components/SelectFont';
 import DogInfo from './components/DogInfo';
@@ -19,7 +18,7 @@ const App = () => (
 
     <div className="main">
       <SelectBreed/>
-      <BreedInput/>
+      <NameInput/>
       <SelectColor/>
       <SelectFont/>
       <DogInfo/>

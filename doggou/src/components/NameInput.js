@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BreedInput = () => {
+const NameInput = () => {
   return (
     <div className="comp-wrapper">
       <form action="">
@@ -11,4 +11,4 @@ const BreedInput = () => {
   );
 }
 
-export default BreedInput;
+export default NameInput;
