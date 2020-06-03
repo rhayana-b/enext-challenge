@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NameInput = (petName = "", onNameChange) => {
+const NameInput = ({onNameChange}) => {
   return (
     <div className="comp-wrapper">
       <form action="">
@@ -8,8 +8,7 @@ const NameInput = (petName = "", onNameChange) => {
         <input
           type="text"
           id="petname" 
-          name="petname" 
-          value={petName} 
+          name="petname"
           onChange={onNameChange}
         />
       </form> 
