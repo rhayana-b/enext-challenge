@@ -4,6 +4,7 @@ import SelectBreed from './components/SelectBreed';
 import BreedInput from './components/BreedInput';
 import SelectColor from './components/SelectColor';
 import SelectFont from './components/SelectFont';
+import DogInfo from './components/DogInfo';
 
 const App = () => (
   <div className="App">
@@ -11,6 +12,7 @@ const App = () => (
     <BreedInput/>
     <SelectColor/>
     <SelectFont/>
+    <DogInfo/>
   </div>
 );
 
