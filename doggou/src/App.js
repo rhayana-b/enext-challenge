@@ -33,6 +33,7 @@ const App = () => {
     localStorage.setItem('color', color);
     localStorage.setItem('font', font);
     localStorage.setItem('image', image);
+    localStorage.setItem('datetime', new Date());
   };
 
   return (
