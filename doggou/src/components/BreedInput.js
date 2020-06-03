@@ -2,7 +2,7 @@ import React from 'react';
 
 const BreedInput = () => {
   return (
-    <div>
+    <div className="comp-wrapper">
       <form action="">
         <label for="petname">Insira o nome do Pet:</label>
         <input type="text" id="petname" name="petname"/>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const SelectColor = () => {
   return (
-    <div>
+    <div className="comp-wrapper">
       <label for="fontcolor">Selecione uma cor para o texto:</label>
 
       <select name="fontcolor" id="fontcolor">
@@ -13,7 +13,7 @@ const SelectColor = () => {
         <option value="#000000">Preto</option>
       </select>
     </div>
-  )
+  );
 }
 
 export default SelectColor;
