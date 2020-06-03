@@ -23,10 +23,10 @@ const SelectBreed = () => {
 
   return (
     <div className="comp-wrapper">
-    <label for="breeds">Selecione uma raça:</label>
+    <label htmlFor="breeds">Selecione uma raça:</label>
 
-    <select name="breeds" id="breeds">
-      <option selected disabled>--</option>
+    <select name="breeds" id="breeds" defaultValue="--">
+      <option value="--" disabled>--</option>
       { renderOptions() }
     </select>
     </div>

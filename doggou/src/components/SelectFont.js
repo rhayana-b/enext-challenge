@@ -3,7 +3,7 @@ import React from 'react';
 const SelectFont = () => {
   return (
     <div className="comp-wrapper">
-      <label for="fonttype">Selecione uma fonte para o texto:</label>
+      <label htmlFor="fonttype">Selecione uma fonte para o texto:</label>
 
       <select name="fonttype" id="fonttype">
         <option value="Tenali Ramakrishna">Tenali Ramakrishna</option>

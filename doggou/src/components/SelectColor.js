@@ -3,7 +3,7 @@ import React from 'react';
 const SelectColor = () => {
   return (
     <div className="comp-wrapper">
-      <label for="fontcolor">Selecione uma cor para o texto:</label>
+      <label htmlFor="fontcolor">Selecione uma cor para o texto:</label>
 
       <select name="fontcolor" id="fontcolor">
         <option value="#dd2d4a">Rosa</option>
