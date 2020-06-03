@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
 
-const SelectBreed = ({onBreedChange}) => {
+const SelectBreed = ({breed, onBreedChange, onImageChange}) => {
   const [breeds, setBreeds] = useState([]);
-
+  
   useEffect(() => {
     api.get('breeds/list/all').then(response => {
       const allBreeds = response.data.message;
@@ -12,6 +12,14 @@ const SelectBreed = ({onBreedChange}) => {
       console.log(error);
     });
   }, []);
+
+  const getImage = (event) => {
+    api.get(`/breed/${event.target.value}/images/random`).then(response => {
+      onImageChange(response.data.message);
+    }).catch(error => {
+      console.log(error);
+    }); 
+  };
 
   const renderOptions = () => {
     return breeds.map(breed => (
@@ -28,8 +36,8 @@ const SelectBreed = ({onBreedChange}) => {
     <select 
       name="breeds" 
       id="breeds" 
-      defaultValue="--" 
-      onChange={onBreedChange}
+      value={breed ? breed : '--'}
+      onChange={(event) => {getImage(event); onBreedChange(event)}}
     >
       <option value="--" disabled>--</option>
       { renderOptions() }

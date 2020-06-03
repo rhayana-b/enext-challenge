@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SelectFont = ({onFontChange}) => {
+const SelectFont = ({fontFamily, onFontChange}) => {
   return (
     <div className="comp-wrapper">
       <label htmlFor="fonttype">Selecione uma fonte para o texto:</label>
@@ -9,7 +9,7 @@ const SelectFont = ({onFontChange}) => {
         name="fonttype" 
         id="fonttype" 
         onChange={onFontChange}
-        defaultValue="--"
+        value={fontFamily ? fontFamily : '--'}
       >
         <option value="--" disabled>--</option>
         <option value="Tenali Ramakrishna">Tenali Ramakrishna</option>

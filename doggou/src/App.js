@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import SelectBreed from './components/SelectBreed';
 import NameInput from './components/NameInput';
@@ -7,11 +7,25 @@ import SelectFont from './components/SelectFont';
 import DogInfo from './components/DogInfo';
 
 const App = () => {
+  const [breed, setBreed] = useState('');
   const [petName, setPetName] = useState('');
   const [fontColor, setFontColor] = useState('#000000');
   const [fontFamily, setFontFamily] = useState('');
-  const [breed, setBreed] = useState('');
   const [image, setImage] = useState('');
+  
+  useEffect(() => {
+    const storageBreed = localStorage.getItem('breed');
+    const storagePetName = localStorage.getItem('petName');
+    const storageColor = localStorage.getItem('color');
+    const storageFont = localStorage.getItem('font');
+    const storageImage = localStorage.getItem('image');
+
+    setBreed(storageBreed ? storageBreed : breed);
+    setPetName(storagePetName ? storagePetName : petName);
+    setFontColor(storageColor ? storageColor : fontColor); 
+    setFontFamily(storageFont ? storageFont : fontFamily);
+    setImage(storageImage ? storageImage : image); 
+  }, [])
 
   const savePet =  (breed, petName, color, font, image) => {
     localStorage.setItem('breed', breed);
@@ -32,11 +46,12 @@ const App = () => {
       </div>
 
       <div className="main">
-        <SelectBreed onBreedChange={(event) => setBreed(event.target.value)} />
-        <NameInput onNameChange={(event) => setPetName(event.target.value)} />
+        <SelectBreed breed={breed} onBreedChange={(event) => setBreed(event.target.value)} onImageChange={setImage} />
+        <NameInput petName={petName} onNameChange={(event) => setPetName(event.target.value)} />
         <SelectColor color={fontColor} onColorChange={(event) => setFontColor(event.target.value)} />
-        <SelectFont onFontChange={(event) => setFontFamily(event.target.value)} />
-        <DogInfo breed={breed} petName={petName} fontColor={fontColor} fontFamily={fontFamily} onImageChange={setImage}/>
+        <SelectFont fontFamily={fontFamily} onFontChange={(event) => setFontFamily(event.target.value)} />
+        <DogInfo image={image} breed={breed} petName={petName} fontColor={fontColor} fontFamily={fontFamily}/>
+
         <button onClick={() => {savePet(breed, petName, fontColor, fontFamily, image)}}>Salvar</button>
       </div>
     </div>

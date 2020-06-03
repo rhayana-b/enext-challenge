@@ -1,19 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import api from '../services/api';
 
-const DogInfo = ({breed, petName, fontColor, fontFamily, onImageChange}) => {
-  const [image, setImage] = useState('');
-
-  useEffect(() => {
-    if (breed) {
-      api.get(`/breed/${breed}/images/random`).then(response => {
-        setImage(response.data.message);
-        onImageChange(response.data.message);
-      }).catch(error => {
-        console.log(error);
-      }); 
-    }
-  }, [breed]);
+const DogInfo = ({breed, petName, fontColor, fontFamily, image}) => {
 
   return (
     <div className="comp-wrapper">
