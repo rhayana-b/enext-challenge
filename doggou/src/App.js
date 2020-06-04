@@ -9,7 +9,7 @@ import DogInfo from './components/DogInfo';
 const App = () => {
   const [breed, setBreed] = useState('');
   const [petName, setPetName] = useState('');
-  const [fontColor, setFontColor] = useState('#000000');
+  const [fontColor, setFontColor] = useState('#484a4d');
   const [fontFamily, setFontFamily] = useState('');
   const [image, setImage] = useState('');
   const [saved, setSaved] = useState(false);
@@ -39,7 +39,7 @@ const App = () => {
     setSaved(true);
     setTimeout(() => {
       setSaved(false);
-    }, 2000);
+    }, 3000);
   };
 
   return (
@@ -53,14 +53,34 @@ const App = () => {
       </div>
 
       <div className="main">
-        <SelectBreed breed={breed} onBreedChange={(event) => setBreed(event.target.value)} onImageChange={setImage} />
-        <NameInput petName={petName} onNameChange={(event) => setPetName(event.target.value)} />
-        <SelectColor color={fontColor} onColorChange={(event) => setFontColor(event.target.value)} />
-        <SelectFont fontFamily={fontFamily} onFontChange={(event) => setFontFamily(event.target.value)} />
-        <DogInfo image={image} breed={breed} petName={petName} fontColor={fontColor} fontFamily={fontFamily}/>
+        <SelectBreed 
+          breed={breed} 
+          onBreedChange={(event) => setBreed(event.target.value)} 
+          onImageChange={setImage} 
+        />
+        <NameInput 
+          petName={petName} 
+          onNameChange={(event) => setPetName(event.target.value)} 
+        />
+        <SelectColor 
+          color={fontColor} 
+          onColorChange={(event) => setFontColor(event.target.value)} 
+        />
+        <SelectFont 
+          fontFamily={fontFamily} 
+          onFontChange={(event) => setFontFamily(event.target.value)} 
+          />
+        <DogInfo 
+          image={image} 
+          petName={petName} 
+          fontColor={fontColor} 
+          fontFamily={fontFamily}
+        />
 
-        <button onClick={() => {savePet(breed, petName, fontColor, fontFamily, image)}}>Salvar</button>
-        {saved ? <span className="success-msg">Salvo com sucesso!</span> : null}
+        <button onClick={() => {savePet(breed, petName, fontColor, fontFamily, image)}}>
+          Salvar
+        </button>
+        { saved ? <span className="success-msg">Salvo com sucesso!</span> : null }
       </div>
     </div>
   );

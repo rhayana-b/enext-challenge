@@ -1,7 +1,6 @@
 import React from 'react';
-import api from '../services/api';
 
-const DogInfo = ({breed, petName, fontColor, fontFamily, image}) => {
+const DogInfo = ({petName, fontColor, fontFamily, image}) => {
 
   return (
     <div className="comp-wrapper dog-info">
