@@ -13,7 +13,7 @@ const SelectFont = ({fontFamily, onFontChange}) => {
       >
         <option value="--" disabled>--</option>
         <option value="Tenali Ramakrishna">Tenali Ramakrishna</option>
-        <option value="ArchitArchitects Daughterects">Architects Daughter</option>
+        <option value="Righteous">Righteous</option>
         <option value="Piedra">Piedra</option>
         <option value="Kaushan Script">RKaushan Script</option>
         <option value="Monoton">Monoton</option>

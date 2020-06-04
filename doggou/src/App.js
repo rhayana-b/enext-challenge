@@ -12,6 +12,7 @@ const App = () => {
   const [fontColor, setFontColor] = useState('#000000');
   const [fontFamily, setFontFamily] = useState('');
   const [image, setImage] = useState('');
+  const [saved, setSaved] = useState(false);
   
   useEffect(() => {
     const storageBreed = localStorage.getItem('breed');
@@ -34,6 +35,11 @@ const App = () => {
     localStorage.setItem('font', font);
     localStorage.setItem('image', image);
     localStorage.setItem('datetime', new Date());
+
+    setSaved(true);
+    setTimeout(() => {
+      setSaved(false);
+    }, 2000);
   };
 
   return (
@@ -54,6 +60,7 @@ const App = () => {
         <DogInfo image={image} breed={breed} petName={petName} fontColor={fontColor} fontFamily={fontFamily}/>
 
         <button onClick={() => {savePet(breed, petName, fontColor, fontFamily, image)}}>Salvar</button>
+        {saved ? <span className="success-msg">Salvo com sucesso!</span> : null}
       </div>
     </div>
   );
