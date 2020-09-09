@@ -14,17 +14,3 @@ O usuário poderá digitar o nome do cachorro, estilizar a fonte e a cor e essa 
 * Botão salvar para armazenar em local storage(funcionalidade HTML5) as informações selecionadas pelo usuário + Data e Horário.
 * Após ação de salvar deve ter uma mensagem de sucesso na tela.
 * Caso a página seja recarregada as informações salvas pelo usuário deverão permanecer na tela.
-
-## Layout
-O layout você tem total liberdade para organizar seus componentes na tela da forma fizer sentido para você.
-
-## O que será avaliado?
-* Composição do código
-    1. Boas práticas;
-    2. Uso de metodologias e padrões;
-    3. Organização/Estrutura do projeto;
-* Funcionamento das features;
-* Performance;
-
-## Observação
-O ideal é que você suba o seu código em sites como Github ou BitBucket, hospede a aplicação e nos envie a URL por e-mail, mas também aceitamos algum link para efetuar o download/clonagem do projeto + instruções de como rodar.
